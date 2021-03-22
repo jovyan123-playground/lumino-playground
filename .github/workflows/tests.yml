@@ -52,5 +52,6 @@ jobs:
             yarn test
 
       - name: Docs
+        if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           yarn docs
