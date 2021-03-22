@@ -197,7 +197,7 @@ describe('Poll', () => {
       };
       void poll.tick.then(tock);
       void poll.start();
-      await sleep(250); // Sleep for longer than the interval.
+      await sleep(300); // Sleep for longer than the interval.
       expect(ticker.join(' ')).to.equal(expected);
     });
 
