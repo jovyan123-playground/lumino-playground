@@ -68,7 +68,13 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           set -eux
-          git status
+          if [ ! -z ${GITHUB_BASE_REF} ]; then
+            export BRANCH=${GITHUB_BASE_REF}
+          else
+            # e.g refs/head/foo or refs/tag/bar
+            export BRANCH=$(echo ${GITHUB_REF} | cut -d'/' -f 3)
+          fi
+          git checkout $BRANCH
           npm install -g verdaccio
           verdaccio --config .github/scripts/verdaccio.yml &
           npm set registry http://localhost:4873/
