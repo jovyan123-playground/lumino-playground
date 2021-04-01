@@ -68,6 +68,7 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           set -eux
+          git status
           npm install -g verdaccio
           verdaccio --config .github/scripts/verdaccio.yml &
           npm set registry http://localhost:4873/
