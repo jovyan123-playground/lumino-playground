@@ -68,8 +68,12 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           set -eux
-          # e.g refs/head/foo or refs/tag/bar
-          export BRANCH=$(echo ${GITHUB_REF} | cut -d'/' -f 3)
+          if [ ! -z ${GITHUB_BASE_REF} ]; then
+            export BRANCH=${GITHUB_BASE_REF}
+          else
+            # e.g refs/head/foo or refs/tag/bar
+            export BRANCH=$(echo ${GITHUB_REF} | cut -d'/' -f 3)
+          fi
           git fetch origin $BRANCH
           git checkout $BRANCH
           npm install -g verdaccio
