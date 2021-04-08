@@ -69,7 +69,7 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           set -eux
-          git checkout -b release ${GITHUB_REF}
+          git checkout -b release HEAD
           npm install -g verdaccio
           verdaccio --config .github/scripts/verdaccio.yml &
           npm set registry http://localhost:4873/
