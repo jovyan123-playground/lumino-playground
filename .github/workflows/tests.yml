@@ -70,14 +70,10 @@ jobs:
         run: |
           set -eux
           if [ ! -z ${GITHUB_HEAD_REF} ]; then
-            export BRANCH=${GITHUB_HEAD_REF}
+            git checkout -b release ${GITHUB_HEAD_REF}
           else
-            # e.g refs/head/foo or refs/tag/bar
-            export BRANCH=$(echo ${GITHUB_REF} | cut -d'/' -f 3)
+            git checkout -b release ${GITHUB_REF}
           fi
-          git remote add upstream ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
-          git fetch upstream $BRANCH
-          git checkout $BRANCH
           npm install -g verdaccio
           verdaccio --config .github/scripts/verdaccio.yml &
           npm set registry http://localhost:4873/
