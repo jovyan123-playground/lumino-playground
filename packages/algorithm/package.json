@@ -29,7 +29,8 @@
   "types": "types/index.d.ts",
   "scripts": {
     "api": "api-extractor run --local --verbose",
-    "build": "tsc --build && rollup -c",
+    "build": "npm run build:src && rollup -c",
+    "build:src": "tsc --build",
     "build:test": "tsc --build tests && cd tests && webpack",
     "clean": "rimraf ./lib && rimraf *.tsbuildinfo && rimraf ./types && rimraf ./dist",
     "clean:test": "rimraf tests/build",
@@ -60,7 +61,7 @@
     "terser": "^4.6.2",
     "tslib": "1.10.0",
     "typedoc": "~0.15.0",
-    "typescript": "~3.6.4",
+    "typescript": "~4.1.3",
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10"
   },
