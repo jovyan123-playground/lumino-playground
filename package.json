@@ -21,7 +21,7 @@
     "docs": "rimraf docs/api && lerna run build:src --concurrency 1 && lerna run docs",
     "get:dependency": "get-dependency",
     "minimize": "lerna run minimize",
-    "publish": "npm run clean && npm run build:dist && node scripts tag-versions.js && lerna publish --yes -m \"Publish\" from-package",
+    "publish": "npm run clean && npm run build:dist && node scripts/tag-versions.js && lerna publish --yes -m \"Publish\" from-package",
     "remove:dependency": "remove-dependency",
     "test": "lerna run test --scope \"@lumino/!(example-)*\"",
     "test:examples": "lerna run test --scope \"@lumino/example-*\"",
