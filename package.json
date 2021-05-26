@@ -43,7 +43,7 @@
     },
     "hooks": {
       "after-build-changelog": "node scripts/format-changelog.js",
-      "before-build-npm": ["yarn build:dist", "node scripts tag-versions.js"]
+      "before-build-npm": ["yarn build:dist", "node scripts/tag-versions.js"]
     }
   }
 }
