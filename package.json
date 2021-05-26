@@ -7,6 +7,9 @@
     "packages/*",
     "tests/*"
   ],
+  "files": {
+    "scripts/*.js"
+  },
   "scripts": {
     "api": "lerna run api",
     "build": "npm run build:src",
