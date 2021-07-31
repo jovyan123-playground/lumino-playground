@@ -96,6 +96,12 @@ jobs:
           python-version: 3.9
           architecture: "x64"
 
+      - name: Get Date
+        id: get-date
+        run: |
+          echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
+        shell: bash
+
       - name: Get pip cache dir
         id: pip-cache
         run: |
@@ -104,7 +110,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.pip-cache.outputs.dir }}
-          key: ${{ runner.os }}-pip-${{ hashFiles('setup.cfg') }}
+          key: ${{ runner.os }}-pip-${{ steps.get-date.outputs.date }}
           restore-keys: |
             ${{ runner.os }}-pip-
             ${{ runner.os }}-pip-
