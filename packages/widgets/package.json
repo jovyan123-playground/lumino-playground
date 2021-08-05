@@ -90,7 +90,7 @@
     "style-loader": "^1.0.2",
     "terser": "^5.7.1",
     "tslib": "^2.3.0",
-    "typedoc": "^0.20.32",
+    "typedoc": "~0.15.0",
     "typescript": "~3.6.0",
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10"
