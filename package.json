@@ -60,7 +60,7 @@
       "ignore-links": [
         "./api/index.html",
         "examples/dockpanel/index.html",
-        "examples/dragdrop/index.html",
+        "examples/datagrid/index.html",
         "examples/accordionpanel/index.html"
       ]
     },
