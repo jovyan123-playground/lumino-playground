@@ -59,9 +59,7 @@
     "options": {
       "ignore-links": [
         "./api/index.html",
-        "examples/dockpanel/index.html",
-        "examples/datagrid/index.html",
-        "examples/accordionpanel/index.html"
+        "examples/*/index.html"
       ]
     },
     "hooks": {
