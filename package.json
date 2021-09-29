@@ -58,8 +58,7 @@
     ],
     "options": {
       "ignore-links": [
-        "./api/index.html",
-        "examples/**/index.html"
+        "./api/index.html"
       ]
     },
     "hooks": {
