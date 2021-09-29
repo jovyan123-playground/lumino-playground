@@ -59,7 +59,7 @@
     "options": {
       "ignore-links": [
         "./api/index.html",
-        "./docs/source/examples.rst"
+        "docs/source/examples.rst"
       ]
     },
     "hooks": {
