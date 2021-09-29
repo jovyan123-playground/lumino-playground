@@ -59,7 +59,9 @@
     "options": {
       "ignore-links": [
         "./api/index.html",
-        "docs/source/examples.rst"
+        "examples/dockpanel/index.html",
+        "examples/dragdrop/index.html",
+        "examples/accordionpanel/index.html"
       ]
     },
     "hooks": {
